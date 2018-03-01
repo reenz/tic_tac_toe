@@ -9,21 +9,24 @@ class TicTacToe
   end
 
   def game_over?(type)
-    # for idx in 0..2 do
-    #   if row_same?(idx, type)
-    #     return true
-    #   end
-    # end
-    (0..2).each do |idx|
-      return true if row_same?(idx, type)
+    (0...@game.length).each do |idx|
+      if row_same?(idx, type)
+          return true
+      elsif column_same?(idx, type)
+          return true
+        end
     end
     false
   end
 
   private
 
-  def row_same?(row_idx, type)
-    @game[row_idx] == [type, type, type]
+  def row_same?(idx, type)
+    @game[idx] == [type, type, type]
+  end
+
+  def column_same?(idx, type)
+    (@game[0][idx] == type) && (@game[1][idx] == type) && (@game[2][idx] == type)
   end
 
 end

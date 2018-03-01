@@ -15,5 +15,12 @@ describe TicTacToe do
     expect(tictactoe.game_over?('x')).to eq true
   end
 
+  it 'return win if all items of a given column are the same' do
+    (0..2).each { |i|
+       tictactoe.move('x', i, 1)
+    }
+    expect(tictactoe.game_over?('x')).to eq true
+  end
+
 
 end
