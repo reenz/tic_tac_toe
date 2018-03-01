@@ -22,5 +22,19 @@ describe TicTacToe do
     expect(tictactoe.game_over?('x')).to eq true
   end
 
+  it 'return win if all items of a diagonal are the same' do
+    tictactoe.move('x', 0, 0)
+    tictactoe.move('x', 1, 1)
+    tictactoe.move('x', 2, 2)
+    expect(tictactoe.game_over?('x')).to eq true
+  end
+
+  it 'return win if all items of a diagonal are the same' do
+    tictactoe.move('x', 0, 2)
+    tictactoe.move('x', 1, 1)
+    tictactoe.move('x', 2, 0)
+    expect(tictactoe.game_over?('x')).to eq true
+  end
+
 
 end
