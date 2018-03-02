@@ -14,9 +14,9 @@ class TicTacToe
           return true
       elsif column_same?(idx, type)
           return true
-        elsif diagonal_same?(type)
-            return true
-        end
+      elsif diagonal_same?(type)
+          return true
+      end
     end
     false
   end
@@ -34,5 +34,6 @@ class TicTacToe
   def diagonal_same?(type)
     (@game[0][0] == type) && (@game[1][1] == type) && (@game[2][2] == type) || (@game[0][2] == type) && (@game[1][1] == type) && (@game[2][0] == type)
   end
+  
 
 end
